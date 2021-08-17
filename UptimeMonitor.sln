@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UptimeMonitor", "UptimeMonitor.csproj", "{FAF8B270-DD6D-41E0-ADEA-DEF1838C8474}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAF8B270-DD6D-41E0-ADEA-DEF1838C8474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF8B270-DD6D-41E0-ADEA-DEF1838C8474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF8B270-DD6D-41E0-ADEA-DEF1838C8474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF8B270-DD6D-41E0-ADEA-DEF1838C8474}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C371FDFC-FA97-403F-9B13-4017028D5EAE}
+	EndGlobalSection
+EndGlobal

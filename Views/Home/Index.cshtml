@@ -1,0 +1,62 @@
+﻿@inject UptimeMonitor.Services.IDataService DataService
+@{
+    ViewData["Title"] = "Home Page";
+    var allWebsites = await DataService.GetAllWebsites();
+    var uptimeRecords = await DataService.GetAllUptimeRecords();
+}
+
+<div class="row">
+    <div class="col-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Date/Time</td>
+                    <td>URL</td>
+                    <td>Online</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in uptimeRecords)
+                {
+                    <tr class="@(item.Online ? "table-success" : "table-danger")">
+                        <td>@item.Date</td>
+                        <td>@item?.Website?.Url</td>
+                        <td>@item.Online</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-4">
+        <form method="post">
+            <input class="form-control" name="Url" />
+            <label for="Enabled">Enabled</label>
+            @Html.CheckBox("Enabled")
+            <button class="btn btn-primary" type="submit">Add Website</button>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>URL</td>
+                        <td>Enabled?</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in allWebsites)
+                    {
+                        <tr>
+                            <td>@item.Url</td>
+                            <td>@item.Enabled</td>
+                            <td>
+                                <a asp-action="DeleteWebsite" asp-controller="Home" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+</div>
